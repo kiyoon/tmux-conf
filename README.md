@@ -53,7 +53,7 @@ You can even use mouse right click.
 - `tmux kill-window -t <session_name>:<window_index>`: kill window.
 - `tmux kill-session -t <session_name>`: kill all windows and session.
 - `tmux display -pt "${TMUX_PANE:?}" '#{pane_index}'`: get current pane index
-- `tmux list-panes -s -F '#D #{pane_pid} #{pane_current_command}'`: list pane's unique identifier, pid, and the commands.
+- `tmux list-panes -s -F '#D #{pane_pid} #{pane_current_command}'`: list pane's unique identifier, pid, and the commands. (`-s` for current session, `-a` for all sessions.)
 
 
 ## Example: run batch job
