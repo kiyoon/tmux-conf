@@ -6,7 +6,8 @@ First of all, launch tmux: `tmux`
 
 ## Create and navigate
 - Ctrl+a + c: create window
-- : see window number
+- `echo $TMUX_PANE`: see pane number (%0, %1, ..)
+- `echo ${TMUX_PANE##%}`: see pane number (0, 1, ..)
 - `exit`: exit window
 - Ctrl+a + n: next window
 - Ctrl+a + p: previous window
