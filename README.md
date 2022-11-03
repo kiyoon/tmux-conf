@@ -68,7 +68,7 @@ Below will create 3 windows and run python commands like:
 
 sess="session_name"
 
-tmux -d -s "$sess"
+tmux new -d -s "$sess"
 
 for window in {0..2}
 do
