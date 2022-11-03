@@ -31,6 +31,8 @@ or, `tmux new -s <session_name>`
 - Ctrl+a + q + \<number\>: see pane number and move between panes
 - Ctrl+a + H/J/K/L: resize panes
 
+You can even use mouse right click.
+
 ## Copy / scroll
 - Ctrl+a + \<ESC\>: Copy mode (use vim commands to scroll)
   - Ctrl+f: page down (front page)
@@ -42,7 +44,11 @@ or, `tmux new -s <session_name>`
 ## Other tips
 - If you press Ctrl+s by mistake, it will freeze. Ctrl+q to unfreeze.
 - On a nested tmux, use Ctrl+a + a + \<command\>.
-- : change default directory for new windows.
+- Ctrl+a `:attach -c /new/dir`: change default directory for new windows.
+
+# Advanced: scripting with tmux
+`tmux display -pt "${TMUX_PANE:?}" '#{pane_index}'`: get current pane index
+`tmux list-panes -s -F '#D #{pane_pid} #{pane_current_command}'`: list pane's unique identifier, pid, and the commands.
 
 # References
 - https://yesmeck.github.io/tmuxrc/
