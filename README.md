@@ -34,12 +34,15 @@ or, `tmux new -s <session_name>`
 You can even use mouse right click.
 
 ## Copy / scroll
-- Ctrl+a + \<ESC\>: Copy mode (use vim commands to scroll)
+- Ctrl+a + \[: Copy mode (use vim commands to scroll)
   - Ctrl+f: page down (front page)
   - Ctrl+b: page up (back page)
   - Ctrl+d: half page down
   - Ctrl+u: half page up
 - In copy mode, `v` to select region. `y` to copy and `q` to exit copy mode. Then Ctrl+a + ] to paste.
+- You can use mouse drag to copy.
+- Ctrl+a + =: see buffer list
+
 
 ## Other tips
 - If you press Ctrl+s by mistake, it will freeze. Ctrl+q to unfreeze.
