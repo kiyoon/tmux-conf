@@ -48,3 +48,4 @@ or, `tmux new -s <session_name>`
 - https://yesmeck.github.io/tmuxrc/
 - https://github.com/yesmeck/tmuxrc/blob/master/tmux.conf
 - https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+- https://unix.stackexchange.com/questions/318281/how-to-copy-and-paste-with-a-mouse-with-tmux
