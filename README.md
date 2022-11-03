@@ -2,7 +2,8 @@
 
 
 # Useful tmux commands
-First of all, launch tmux: `tmux`
+First of all, launch tmux: `tmux`  
+or, `tmux new -s <session_name>`
 
 ## Create and navigate
 - Ctrl+a + c: create window
@@ -20,7 +21,7 @@ First of all, launch tmux: `tmux`
 - Ctrl+a + d: detach tmux session
 - `tmux ls`: list sessions
 - `tmux attach` or `tmux a`: attach session
-- `tmux attach <number>`: attach session (specified by the number)
+- `tmux attach -t <session_name>`: attach session (specified by the number or name)
 
 ## Divide
 - Ctrl+a + |: divide screen (vertical)
