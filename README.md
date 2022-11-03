@@ -47,8 +47,42 @@ You can even use mouse right click.
 - Ctrl+a `:attach -c /new/dir`: change default directory for new windows.
 
 # Advanced: scripting with tmux
-`tmux display -pt "${TMUX_PANE:?}" '#{pane_index}'`: get current pane index
-`tmux list-panes -s -F '#D #{pane_pid} #{pane_current_command}'`: list pane's unique identifier, pid, and the commands.
+- `tmux new-session -d -s <session_name>`: start a session in detached mode.
+- `tmux new-window -t <session_name>:<window_index>`: create a window. You can omit the index. You can add the command at the end, but it will automatically be closed when the command finishes.
+- `tmux send-keys -t <session_name>:<window_index>.<pane_index> C-u 'some -new command' Enter`: write in a pane. You can use left/right instead of the pane index.
+- `tmux kill-window -t <session_name>:<window_index>`: kill window.
+- `tmux kill-session -t <session_name>`: kill all windows and session.
+- `tmux display -pt "${TMUX_PANE:?}" '#{pane_index}'`: get current pane index
+- `tmux list-panes -s -F '#D #{pane_pid} #{pane_current_command}'`: list pane's unique identifier, pid, and the commands.
+
+
+## Example: run batch job
+
+Below will create 3 windows and run python commands like:  
+- `CUDA_VISIBLE_DEVICES=0 python train.py --arg 1`
+- `CUDA_VISIBLE_DEVICES=1 python train.py --arg 2`
+- `CUDA_VISIBLE_DEVICES=2 python train.py --arg 3`
+
+```bash
+#!/bin/bash
+
+sess="session_name"
+
+tmux -d -s "$sess"
+
+for window in {0..2}
+do
+    # Window 0 already exists so don't make it again
+    if [ $window -ne 0 ]
+    then
+        tmux new-window -t "$sess:$window"
+    fi
+
+    command="CUDA_VISIBLE_DEVICES=$window python train.py --arg $((window+1))"
+    tmux send-keys -t "$sess:$window" "$command" Enter
+done
+```
+
 
 # References
 - https://yesmeck.github.io/tmuxrc/
