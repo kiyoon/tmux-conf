@@ -17,7 +17,8 @@ First of all, launch tmux: `tmux`
 
 ## Detach and resume
 - Ctrl+a + d: detach tmux session
-- `tmux attach`: attach session
+- `tmux ls`: list sessions
+- `tmux attach` or `tmux a`: attach session
 - `tmux attach <number>`: attach session (specified by the number)
 
 ## Divide
@@ -25,7 +26,7 @@ First of all, launch tmux: `tmux`
 - Ctrl+a + -: divide screen (horizontal)
 - Ctrl+a + h/j/k/l: move between panes
 - Alt + \<ArrowKey\>: move between panes
-- : close divided screen
+- Ctrl+a + q + \<number\>: see pane number and move between panes
 - Ctrl+a + H/J/K/L: resize panes
 
 ## Copy / scroll
