@@ -93,6 +93,10 @@ set -g base-index 1
 
 # Set the base index for panes to 1 instead of 0.
 setw -g pane-base-index 1
+
+# Show pane details.
+set -g pane-border-status top
+set -g pane-border-format ' .#P (#D) #{pane_current_command} '
 ```
 
 # References
