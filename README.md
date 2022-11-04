@@ -86,6 +86,14 @@ do
 done
 ```
 
+# Recommended tmux.conf settings
+```tmux
+# Set the base index for windows to 1 instead of 0.
+set -g base-index 1
+
+# Set the base index for panes to 1 instead of 0.
+setw -g pane-base-index 1
+```
 
 # References
 - https://yesmeck.github.io/tmuxrc/
