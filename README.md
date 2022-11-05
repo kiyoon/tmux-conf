@@ -1,5 +1,24 @@
 # tmux-conf
 
+## Installation
+```bash
+mkdir ~/bin
+cd ~/bin
+git clone https://github.com/kiyoon/tmux-conf
+cd
+ln -s bin/tmux-conf/.tmux.conf
+
+# Plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# start a server but don't attach to it
+tmux start-server
+# create a new session but don't attach to it either
+tmux new-session -d
+# install the plugins
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+# killing the server is not required, I guess
+tmux kill-server
+```
 
 # Useful tmux commands
 First of all, launch tmux: `tmux`  
@@ -49,6 +68,13 @@ You can even use mouse right click.
 - On a nested tmux, use Ctrl+a + a + \<command\>.
 - Ctrl+a `:attach -c /new/dir`: change default directory for new windows.
 
+
+## Plugins
+- Ctrl+a + I: Install plugins
+- Ctrl+a + U: Update plugins
+- (tmux-yank): Ctrl+a + y: copy bash command line
+- (tmux-yank): Ctrl+a + Y: copy PWD
+
 # Advanced: scripting with tmux
 - `tmux new-session -d -s <session_name>`: start a session in detached mode.
 - `tmux new-window -t <session_name>:<window_index>`: create a window. You can omit the index. You can add the command at the end, but it will automatically be closed when the command finishes.
@@ -86,18 +112,6 @@ do
 done
 ```
 
-# Recommended tmux.conf settings
-```tmux
-# Set the base index for windows to 1 instead of 0.
-set -g base-index 1
-
-# Set the base index for panes to 1 instead of 0.
-setw -g pane-base-index 1
-
-# Show pane details.
-set -g pane-border-status top
-set -g pane-border-format ' .#P (#D) #{pane_current_command} '
-```
 
 # References
 - https://yesmeck.github.io/tmuxrc/
