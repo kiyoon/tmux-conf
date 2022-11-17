@@ -67,7 +67,7 @@ You can even use mouse right click.
 - If you press Ctrl+s by mistake, it will freeze. Ctrl+q to unfreeze.
 - On a nested tmux, use Ctrl+a + a + \<command\>.
 - Ctrl+a `:attach -c /new/dir`: change default directory for new windows.
-
+- Shift + drag: bypass tmux mouse integration and select terminal.
 
 ## Plugins
 - Ctrl+a + I: Install plugins
