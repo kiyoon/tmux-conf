@@ -95,17 +95,15 @@ Below will create 3 windows and run python commands like:
 ```bash
 #!/bin/bash
 
+script_dir=$(dirname $(realpath -s $0))
 sess="session_name"
 
-tmux new -d -s "$sess"
+tmux new -d -s "$sess" -c "$script_dir"   # Use default directory as this script directory
 
 for window in {0..2}
 do
-    # Window 0 already exists so don't make it again
-    if [ $window -ne 0 ]
-    then
-        tmux new-window -t "$sess:$window"
-    fi
+    # Window 0 or 1 may already exist so it will print error. Ignore that.
+    tmux new-window -t "$sess:$window"
 
     command="CUDA_VISIBLE_DEVICES=$window python train.py --arg $((window+1))"
     tmux send-keys -t "$sess:$window" "$command" Enter
