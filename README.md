@@ -95,7 +95,7 @@ Below will create 3 windows and run python commands like:
 ```bash
 #!/bin/bash
 
-script_dir=$(dirname $(realpath -s $0))
+script_dir=$(dirname "$(realpath -s "$0")")
 sess="session_name"
 
 tmux new -d -s "$sess" -c "$script_dir"   # Use default directory as this script directory
