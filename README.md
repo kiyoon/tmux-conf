@@ -24,7 +24,7 @@ tmux kill-server
 First of all, launch tmux: `tmux`  
 or, `tmux new -s <session_name>`
 
-## Create and navigate
+## Create window and navigate
 - Ctrl+a + c: create window
 - `echo $TMUX_PANE`: see pane number (%0, %1, ..)
 - `echo ${TMUX_PANE##%}`: see pane number (0, 1, ..)
@@ -32,6 +32,7 @@ or, `tmux new -s <session_name>`
 - Ctrl+a + n: next window
 - Ctrl+a + p: previous window
 - Ctrl+a + \<number\>: jump to the window number
+- Ctrl+a + '\<number\>\<Enter\>: jump to the window number (use when bigger than 9)
 - Ctrl+a + ,: change window title
 - Ctrl+Shift+s+Left / Right: re-order windows
 
@@ -42,9 +43,11 @@ or, `tmux new -s <session_name>`
 - `tmux attach` or `tmux a`: attach session
 - `tmux attach -t <session_name>`: attach session (specified by the number or name)
 
-## Divide
-- Ctrl+a + |: divide screen (vertical)
+## Divide window (create pane) and navigate
+- Ctrl+a + \\: divide screen (vertical)
 - Ctrl+a + -: divide screen (horizontal)
+- Ctrl+a + |: divide screen (vertical, current dir)
+- Ctrl+a + _: divide screen (horizontal, current dir)
 - Ctrl+a + h/j/k/l: move between panes
 - Alt + \<ArrowKey\>: move between panes
 - Ctrl+a + q + \<number\>: see pane number and move between panes
