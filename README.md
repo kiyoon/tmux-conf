@@ -77,6 +77,8 @@ You can even use mouse right click.
 - Ctrl+a + U: Update plugins
 - (tmux-yank): Ctrl+a + y: copy bash command line
 - (tmux-yank): Ctrl+a + Y: copy PWD
+- (tmux-side-nvim-tree): Ctrl+a + \<Tab\>: toggle file browser on the side
+- (tmux-side-nvim-tree): Ctrl+a + \<Backspace\>: toggle file browser on the side, and focus on it
 
 # Advanced: scripting with tmux
 - `tmux new-session -d -s <session_name>`: start a session in detached mode.
