@@ -42,6 +42,7 @@ or, `tmux new -s <session_name>`
 - `tmux ls`: list sessions
 - `tmux attach` or `tmux a`: attach session
 - `tmux attach -t <session_name>`: attach session (specified by the number or name)
+- Ctrl+a + s: select and move session
 
 ## Divide window (create pane) and navigate
 - Ctrl+a + \\: divide screen (vertical)
