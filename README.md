@@ -63,6 +63,10 @@ You can even use mouse right click.
 - Ctrl+a + Ctrl+o: rotate pane clockwise
 - Ctrl+a + Alt+o: rotate pane anticlockwise
 
+## Change horizontal split to vertical (and vice verca)
+- Ctrl+a + `:move-pane -h -t '.{up-of}'`: horizontal split to vertical
+- Ctrl+a + `:move-pane -t '.{left-of}'`: vertical split to horizontal
+
 ## Copy / scroll
 - Ctrl+a + \[: Copy mode (use vim commands to scroll)
   - Ctrl+f: page down (front page)
