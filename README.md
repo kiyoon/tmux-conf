@@ -56,6 +56,13 @@ or, `tmux new -s <session_name>`
 
 You can even use mouse right click.
 
+## Swap panes
+- Ctrl+a + {: swap with the prvious pane
+- Ctrl+a + }: swap with the next pane
+- Ctrl+a + `:swap-pane -U/-D/-L/-R`: swap with another pane
+- Ctrl+a + Ctrl+o: rotate pane clockwise
+- Ctrl+a + Alt+o: rotate pane anticlockwise
+
 ## Copy / scroll
 - Ctrl+a + \[: Copy mode (use vim commands to scroll)
   - Ctrl+f: page down (front page)
