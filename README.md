@@ -1,5 +1,7 @@
 # tmux-conf
 
+My IDE-like Tmux configuration and tutorial!
+
 ## Installation
 ```bash
 mkdir ~/bin
