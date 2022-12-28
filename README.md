@@ -1,5 +1,7 @@
 # tmux-conf
 
+My IDE-like Tmux configuration and tutorial!
+
 ## Installation
 ```bash
 mkdir ~/bin
@@ -55,6 +57,17 @@ or, `tmux new -s <session_name>`
 - Ctrl+a + H/J/K/L: resize panes
 
 You can even use mouse right click.
+
+## Swap panes
+- Ctrl+a + {: swap with the prvious pane
+- Ctrl+a + }: swap with the next pane
+- Ctrl+a + `:swap-pane -U/-D/-L/-R`: swap with another pane
+- Ctrl+a + Ctrl+o: rotate pane clockwise
+- Ctrl+a + Alt+o: rotate pane anticlockwise
+
+## Change horizontal split to vertical (and vice verca)
+- Ctrl+a + `:move-pane -h -t '.{up-of}'`: horizontal split to vertical
+- Ctrl+a + `:move-pane -t '.{left-of}'`: vertical split to horizontal
 
 ## Copy / scroll
 - Ctrl+a + \[: Copy mode (use vim commands to scroll)
